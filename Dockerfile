@@ -16,6 +16,7 @@ RUN mkdir -p /app
 WORKDIR /app
 
 ADD consignment.json /app/consignment.json
-COPY --from=builder /go/src/github.com/JekaTka/shippy-consignment-cli/consignment-cli .
+COPY --from=builder /go/src/github.com/JekaTka/shippy-consignment-cli .
 
-CMD ["./consignment-cli"]
+ENTRYPOINT ["./shippy-consignment-cli"]
+CMD ["./shippy-consignment-cli"]
